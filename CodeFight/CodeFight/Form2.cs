@@ -35,6 +35,7 @@ namespace CodeFight
             this.qNum = qNum;
             setting();
         }
+
         public void setting()
         {
             user1.Text = userName;
@@ -61,5 +62,13 @@ namespace CodeFight
         {
 
         }
-    }
+
+		private void Form2_Load(object sender, EventArgs e) {
+
+		}
+
+		private void pictureBox3_Click(object sender, EventArgs e) {
+
+		}
+	}
 }

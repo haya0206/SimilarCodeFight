@@ -20,7 +20,7 @@ namespace CodeFight
 
         private void button1_Click(object sender, EventArgs e)
         {
-            userName = textBox1.Text; 
+            userName = textBox1.Text;
             this.Visible = false;
             Form2 frm = new Form2(userName);
             frm.Owner = this;
