@@ -265,7 +265,6 @@
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
-
         }
 
         #endregion

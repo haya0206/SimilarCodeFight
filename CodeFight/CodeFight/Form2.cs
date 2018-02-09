@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Net.Http;
+using FreeNet;
+using System.IO;
 namespace CodeFight
 {
     public partial class Form2 : Form
@@ -21,21 +23,25 @@ namespace CodeFight
         {
             this.userName = userName;
             InitializeComponent();
+            getJson();
         }
 
         private void Form_Closing(object sender, FormClosingEventArgs e)
         {
             Application.Exit();
         }
-
-        public void getJson(String enemyName, String moon, String qNum)
+        public void getJson()
         {
-            this.enemyName = enemyName;
-            this.moon = moon;
-            this.qNum = qNum;
+            while (get.a.Length == 0)
+            {
+                Delay(1);
+            }
+            string[] tmp = get.a.Split(' ');
+            this.enemyName = tmp[0];
+            this.moon = File.ReadAllText("/resource/" + tmp[1] + ".txt");
+            this.qNum = tmp[1];
             setting();
         }
-
         private static DateTime Delay(int MS)
         {
             DateTime ThisMoment = DateTime.Now;
@@ -50,7 +56,6 @@ namespace CodeFight
 
             return DateTime.Now;
         }
-
         public void setting()
         {
             user1.Text = userName;
@@ -71,6 +76,10 @@ namespace CodeFight
             var responseString = await response.Content.ReadAsStringAsync();
 
             compilerResultBox.Text = responseString;
+            if (compilerResultBox.Text.IndexOf("sucksex!!") == 0)
+            {
+                Socket_.post("win "+userName);
+            }
         }
 
         private void giveup_Click(object sender, EventArgs e)
@@ -82,5 +91,10 @@ namespace CodeFight
             public static string a = string.Empty;
 
         }
+    }
+    static public class get
+    {
+        public static string a = string.Empty;
+
     }
 }
