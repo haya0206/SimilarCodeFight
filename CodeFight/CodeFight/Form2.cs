@@ -36,6 +36,21 @@ namespace CodeFight
             setting();
         }
 
+        private static DateTime Delay(int MS)
+        {
+            DateTime ThisMoment = DateTime.Now;
+            TimeSpan duration = new TimeSpan(0, 0, 0, 0, MS);
+            DateTime AfterWards = ThisMoment.Add(duration);
+
+            while (AfterWards >= ThisMoment)
+            {
+                System.Windows.Forms.Application.DoEvents();
+                ThisMoment = DateTime.Now;
+            }
+
+            return DateTime.Now;
+        }
+
         public void setting()
         {
             user1.Text = userName;
@@ -62,13 +77,10 @@ namespace CodeFight
         {
 
         }
+        static public class get
+        {
+            public static string a = string.Empty;
 
-		private void Form2_Load(object sender, EventArgs e) {
-
-		}
-
-		private void pictureBox3_Click(object sender, EventArgs e) {
-
-		}
-	}
+        }
+    }
 }
