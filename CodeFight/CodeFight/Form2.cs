@@ -86,6 +86,11 @@ namespace CodeFight
         {
 
         }
+        static public class get
+        {
+            public static string a = string.Empty;
+
+        }
     }
     static public class get
     {
