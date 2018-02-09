@@ -7,13 +7,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using System.Net.Http;
 namespace CodeFight
 {
     public partial class Form2 : Form
     {
-        String userName;
-        String enemyName;
+        private static readonly HttpClient client = new HttpClient();
+        String userName = "Default";
+        String enemyName = "Default";
+        String moon = "Default";
+        String qNum = "0";
         public Form2(String userName)
         {
             this.userName = userName;
@@ -25,9 +28,37 @@ namespace CodeFight
             Application.Exit();
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
+        public void getJson(String enemyName, String moon, String qNum)
         {
+            this.enemyName = enemyName;
+            this.moon = moon;
+            this.qNum = qNum;
+            setting();
+        }
+        public void setting()
+        {
+            user1.Text = userName;
+            user2.Text = enemyName;
+            questionBox.Text = moon;
             panel1.Visible = true;
+        }
+
+        private async void compileButton_ClickAsync(object sender, EventArgs e)
+        {
+            var nowLang = Convert.ToString(languege.SelectedIndex + 1);
+            var source = textBox1.Text;
+            var values = new Dictionary<string, string> { { "source", source }, { "qnum", qNum }, { "languege", nowLang } };
+            var content = new FormUrlEncodedContent(values);
+
+            var response = await client.PostAsync("http://114.202.56.161:5000", content);
+
+            var responseString = await response.Content.ReadAsStringAsync();
+
+            compilerResultBox.Text = responseString;
+        }
+
+        private void giveup_Click(object sender, EventArgs e)
+        {
 
         }
     }

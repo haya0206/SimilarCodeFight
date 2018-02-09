@@ -12,25 +12,17 @@ namespace CodeFight
 {
     public partial class Form1 : Form
     {
+        String userName;
         public Form1()
         {
             InitializeComponent();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void button1_Click(object sender, EventArgs e)
         {
+            userName = textBox1.Text; 
             this.Visible = false;
-            Form2 frm = new Form2();
+            Form2 frm = new Form2(userName);
             frm.Owner = this;
             frm.Show();
         }
