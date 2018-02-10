@@ -23,7 +23,6 @@ namespace CodeFight
         {
             this.userName = userName;
             InitializeComponent();
-            getJson();
         }
 
         private void Form_Closing(object sender, FormClosingEventArgs e)
@@ -37,9 +36,14 @@ namespace CodeFight
                 Delay(1);
             }
             string[] tmp = get.a.Split(' ');
+            get.a = string.Empty;
             this.enemyName = tmp[0];
-            this.moon = File.ReadAllText("/resource/" + tmp[1] + ".txt");
+            this.moon = File.ReadAllText("D:/github/shangus1/CodeFight/CodeFight/resource/" + tmp[1] + ".txt", Encoding.Default);
             this.qNum = tmp[1];
+            timer1.Stop();
+            label2.Hide();
+            textBox1.AcceptsTab = true;
+            languege.SelectedItem = 1;
             setting();
         }
         private static DateTime Delay(int MS)
@@ -58,10 +62,22 @@ namespace CodeFight
         }
         public void setting()
         {
-            user1.Text = userName;
-            user2.Text = enemyName;
+            user2.Text = userName;
+            user1.Text = enemyName;
             questionBox.Text = moon;
             panel1.Visible = true;
+            while (get.a.Length == 0)
+            {
+                Delay(1);
+            }
+            if (get.a == "win")
+            {
+                winImage.Visible = true;
+            }
+            else
+            {
+                loseImage.Visible = true;
+            }
         }
 
         private async void compileButton_ClickAsync(object sender, EventArgs e)
@@ -75,21 +91,58 @@ namespace CodeFight
 
             var responseString = await response.Content.ReadAsStringAsync();
 
-            compilerResultBox.Text = responseString;
-            if (compilerResultBox.Text.IndexOf("sucksex!!") == 0)
+            if (compilerResultBox.Text.IndexOf("sucksex!!") >= 0)
             {
+                compilerResultBox.Text = "컴파일 성공!";
                 Socket_.post("win "+userName);
+            }
+            else if(compilerResultBox.Text.IndexOf("fail") >= 0)
+            {
+                compilerResultBox.Text = "컴파일 실패";
+            }
+            else
+            {
+                compilerResultBox.Text = responseString;
             }
         }
 
         private void giveup_Click(object sender, EventArgs e)
         {
+            Socket_.post("lose " + userName);
+        }
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
 
         }
-        static public class get
-        {
-            public static string a = string.Empty;
 
+        private void Form2_Load(object sender, EventArgs e)
+        {
+            //getJson();
+        }
+
+        private void Form2_Shown(object sender, EventArgs e)
+        {
+            getJson();
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            if(label2.Text == "...")
+            {
+                label2.Text = ".";
+            }
+            else
+            {
+                label2.Text += ".";
+            }
+        }
+
+        private void textBox1_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.F5)
+            {
+                compileButton.PerformClick();
+            }
         }
     }
     static public class get

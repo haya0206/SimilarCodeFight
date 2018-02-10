@@ -14,6 +14,7 @@ namespace CodeFight
         [STAThread]
         static void Main()
         {
+            Socket_.Load();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Form1());

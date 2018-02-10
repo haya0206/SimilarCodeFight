@@ -20,7 +20,7 @@ namespace CodeFight
             CConnector connector = new CConnector(service);
             // 접속 성공시 호출될 콜백 매소드 지정.
             connector.connected_callback += on_connected_gameserver;
-            IPEndPoint endpoint = new IPEndPoint(IPAddress.Parse("45.77.14.49"), 10518);
+            IPEndPoint endpoint = new IPEndPoint(IPAddress.Parse("127.0.0.1"), 10518);
             connector.connect(endpoint);
             //System.Threading.Thread.Sleep(10);
             //System.Threading.Thread.Sleep(1000 * 20);

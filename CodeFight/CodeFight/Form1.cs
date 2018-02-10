@@ -20,12 +20,19 @@ namespace CodeFight
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Socket_.post("match "+userName);
-            userName = textBox1.Text; 
+            userName = textBox1.Text;
+            Socket_.post("match " + userName);
             this.Visible = false;
             Form2 frm = new Form2(userName);
-            frm.Owner = this;
             frm.Show();
+        }
+
+        private void textBox1_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Enter)
+            {
+                button1.PerformClick();
+            }
         }
     }
 }
