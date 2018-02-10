@@ -38,7 +38,7 @@ namespace CodeFight
             string[] tmp = get.a.Split(' ');
             get.a = string.Empty;
             this.enemyName = tmp[0];
-            this.moon = File.ReadAllText("D:/github/shangus1/CodeFight/CodeFight/resource/" + tmp[1] + ".txt", Encoding.Default);
+            this.moon = File.ReadAllText("./resource/" + tmp[1] + ".txt", Encoding.Default);
             this.qNum = tmp[1];
             timer1.Stop();
             label2.Hide();
@@ -96,7 +96,7 @@ namespace CodeFight
                 compilerResultBox.Text = "컴파일 성공!";
                 Socket_.post("win "+userName);
             }
-            else if(compilerResultBox.Text.IndexOf("fail") >= 0)
+            else if(compilerResultBox.Text.IndexOf("Fail") >= 0)
             {
                 compilerResultBox.Text = "컴파일 실패";
             }
@@ -144,6 +144,7 @@ namespace CodeFight
                 compileButton.PerformClick();
             }
         }
+
     }
     static public class get
     {
