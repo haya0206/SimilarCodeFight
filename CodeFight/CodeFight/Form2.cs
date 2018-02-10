@@ -84,6 +84,7 @@ namespace CodeFight
         {
             var nowLang = Convert.ToString(languege.SelectedIndex + 1);
             var source = textBox1.Text;
+            System.Windows.Forms.Application.DoEvents();
             var values = new Dictionary<string, string> { { "source", source }, { "qnum", qNum }, { "languege", nowLang } };
             var content = new FormUrlEncodedContent(values);
 
@@ -91,7 +92,7 @@ namespace CodeFight
 
             var responseString = await response.Content.ReadAsStringAsync();
 
-            if (compilerResultBox.Text.IndexOf("sucksex!!") >= 0)
+            if (responseString.IndexOf("sucksex!!") >= 0)
             {
                 compilerResultBox.Text = "컴파일 성공!";
                 Socket_.post("win "+userName);
