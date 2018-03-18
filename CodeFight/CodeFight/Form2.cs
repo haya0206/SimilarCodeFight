@@ -19,6 +19,7 @@ namespace CodeFight
         String enemyName = "Default";
         String moon = "Default";
         String qNum = "0";
+        int closed = 0;
         public Form2(String userName)
         {
             this.userName = userName;
@@ -27,12 +28,21 @@ namespace CodeFight
 
         private void Form_Closing(object sender, FormClosingEventArgs e)
         {
+            if (winImage.Visible != true && loseImage.Visible != true)
+            {
+                closed = 1;
+                giveup.PerformClick();
+            }
             Application.Exit();
         }
         public void getJson()
         {
             while (get.a.Length == 0)
             {
+                if (closed == 1)
+                {
+                    return;
+                }
                 Delay(1);
             }
             string[] tmp = get.a.Split(' ');
@@ -146,6 +156,10 @@ namespace CodeFight
             }
         }
 
+        private void loseImage_Click(object sender, EventArgs e)
+        {
+
+        }
     }
     static public class get
     {

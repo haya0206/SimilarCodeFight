@@ -17,7 +17,6 @@ namespace CodeFight
         {
             InitializeComponent();
         }
-
         private void button1_Click(object sender, EventArgs e)
         {
             userName = textBox1.Text;
@@ -33,6 +32,11 @@ namespace CodeFight
             {
                 button1.PerformClick();
             }
+        }
+
+        private void formclosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

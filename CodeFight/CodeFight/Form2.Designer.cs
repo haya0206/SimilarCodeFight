@@ -33,6 +33,13 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.user1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.loseImage = new System.Windows.Forms.PictureBox();
+            this.winImage = new System.Windows.Forms.PictureBox();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.vsBox = new System.Windows.Forms.PictureBox();
             this.languege = new System.Windows.Forms.ComboBox();
             this.giveup = new System.Windows.Forms.Button();
             this.compileButton = new System.Windows.Forms.Button();
@@ -41,13 +48,6 @@
             this.user2 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.loseImage = new System.Windows.Forms.PictureBox();
-            this.winImage = new System.Windows.Forms.PictureBox();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.vsBox = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.loseImage)).BeginInit();
@@ -113,6 +113,87 @@
             this.panel1.TabIndex = 4;
             this.panel1.Visible = false;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // loseImage
+            // 
+            this.loseImage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.loseImage.Image = global::CodeFight.Properties.Resources.lose;
+            this.loseImage.Location = new System.Drawing.Point(175, 200);
+            this.loseImage.Name = "loseImage";
+            this.loseImage.Size = new System.Drawing.Size(525, 240);
+            this.loseImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.loseImage.TabIndex = 13;
+            this.loseImage.TabStop = false;
+            this.loseImage.Visible = false;
+            // 
+            // winImage
+            // 
+            this.winImage.Image = global::CodeFight.Properties.Resources.win;
+            this.winImage.Location = new System.Drawing.Point(175, 200);
+            this.winImage.Name = "winImage";
+            this.winImage.Size = new System.Drawing.Size(525, 240);
+            this.winImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.winImage.TabIndex = 12;
+            this.winImage.TabStop = false;
+            this.winImage.Visible = false;
+            // 
+            // pictureBox5
+            // 
+            this.pictureBox5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox5.Image = global::CodeFight.Properties.Resources.dancing;
+            this.pictureBox5.Location = new System.Drawing.Point(792, 524);
+            this.pictureBox5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(57, 92);
+            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox5.TabIndex = 11;
+            this.pictureBox5.TabStop = false;
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox4.Image = global::CodeFight.Properties.Resources.dancing;
+            this.pictureBox4.Location = new System.Drawing.Point(735, 524);
+            this.pictureBox4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(57, 92);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox4.TabIndex = 11;
+            this.pictureBox4.TabStop = false;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox3.Image = global::CodeFight.Properties.Resources.dancing;
+            this.pictureBox3.Location = new System.Drawing.Point(678, 524);
+            this.pictureBox3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(57, 92);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox3.TabIndex = 11;
+            this.pictureBox3.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox2.Image = global::CodeFight.Properties.Resources.dancing;
+            this.pictureBox2.Location = new System.Drawing.Point(621, 524);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(57, 92);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 11;
+            this.pictureBox2.TabStop = false;
+            // 
+            // vsBox
+            // 
+            this.vsBox.Image = global::CodeFight.Properties.Resources.VS;
+            this.vsBox.Location = new System.Drawing.Point(306, 16);
+            this.vsBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.vsBox.Name = "vsBox";
+            this.vsBox.Size = new System.Drawing.Size(107, 51);
+            this.vsBox.TabIndex = 10;
+            this.vsBox.TabStop = false;
             // 
             // languege
             // 
@@ -198,84 +279,6 @@
             this.timer1.Interval = 1000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // loseImage
-            // 
-            this.loseImage.Image = global::CodeFight.Properties.Resources.lose;
-            this.loseImage.Location = new System.Drawing.Point(326, 202);
-            this.loseImage.Name = "loseImage";
-            this.loseImage.Size = new System.Drawing.Size(261, 163);
-            this.loseImage.TabIndex = 13;
-            this.loseImage.TabStop = false;
-            this.loseImage.Visible = false;
-            // 
-            // winImage
-            // 
-            this.winImage.Image = global::CodeFight.Properties.Resources.win;
-            this.winImage.Location = new System.Drawing.Point(326, 202);
-            this.winImage.Name = "winImage";
-            this.winImage.Size = new System.Drawing.Size(261, 163);
-            this.winImage.TabIndex = 12;
-            this.winImage.TabStop = false;
-            this.winImage.Visible = false;
-            // 
-            // pictureBox5
-            // 
-            this.pictureBox5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox5.Image = global::CodeFight.Properties.Resources.dancing;
-            this.pictureBox5.Location = new System.Drawing.Point(792, 524);
-            this.pictureBox5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(57, 92);
-            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox5.TabIndex = 11;
-            this.pictureBox5.TabStop = false;
-            // 
-            // pictureBox4
-            // 
-            this.pictureBox4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox4.Image = global::CodeFight.Properties.Resources.dancing;
-            this.pictureBox4.Location = new System.Drawing.Point(735, 524);
-            this.pictureBox4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(57, 92);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox4.TabIndex = 11;
-            this.pictureBox4.TabStop = false;
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox3.Image = global::CodeFight.Properties.Resources.dancing;
-            this.pictureBox3.Location = new System.Drawing.Point(678, 524);
-            this.pictureBox3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(57, 92);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox3.TabIndex = 11;
-            this.pictureBox3.TabStop = false;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox2.Image = global::CodeFight.Properties.Resources.dancing;
-            this.pictureBox2.Location = new System.Drawing.Point(621, 524);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(57, 92);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 11;
-            this.pictureBox2.TabStop = false;
-            // 
-            // vsBox
-            // 
-            this.vsBox.Image = global::CodeFight.Properties.Resources.VS;
-            this.vsBox.Location = new System.Drawing.Point(306, 16);
-            this.vsBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.vsBox.Name = "vsBox";
-            this.vsBox.Size = new System.Drawing.Size(107, 51);
-            this.vsBox.TabIndex = 10;
-            this.vsBox.TabStop = false;
-            // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::CodeFight.Properties.Resources.cat;
@@ -292,10 +295,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(875, 640);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label1);
+            this.Controls.Add(this.label2);
             this.Name = "Form2";
             this.Text = "Form2";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form_Closing);
@@ -327,12 +330,12 @@
         private System.Windows.Forms.Button compileButton;
         private System.Windows.Forms.TextBox compilerResultBox;
         private System.Windows.Forms.ComboBox languege;
-		private System.Windows.Forms.PictureBox vsBox;
-		private System.Windows.Forms.PictureBox pictureBox1;
-		private System.Windows.Forms.PictureBox pictureBox2;
-		private System.Windows.Forms.PictureBox pictureBox5;
-		private System.Windows.Forms.PictureBox pictureBox4;
-		private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.PictureBox vsBox;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox pictureBox5;
+        private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.PictureBox loseImage;
